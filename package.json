@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/rgirodon/tse_typescript#readme",
   "dependencies": {
-    "rxjs": "^7.4.0"
+    "rxjs": "^7.8.1"
   }
 }

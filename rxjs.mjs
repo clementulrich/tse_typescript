@@ -1,8 +1,5 @@
-// tsc rxjs.ts --lib es2015,dom
-
-/*
 import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 of(1, 2, 3, 4)
     .pipe(map(x => x + '!!!'))
@@ -17,7 +14,21 @@ of(1, 2, 3, 4)
             console.log('done'); 
         }
     });
-*/
+
+  of(1, 2, 3, 4)
+    .pipe(switchMap(x => of (x + '!', x + '!!', x + '!!!')))
+    .subscribe({
+        next(x) { 
+            console.log('got value ' + x); 
+        },
+        error(err) { 
+            console.error('something wrong occurred: ' + err); 
+        },
+        complete() { 
+            console.log('done'); 
+        }
+    });
+
 
 /*
 import { Observable } from 'rxjs';
